@@ -1,4 +1,4 @@
-name: Template Cleanup
+name: Template Upstream Sync
 on:
   push
   
@@ -13,9 +13,16 @@ jobs:
       # Check out current repository
       - name: Fetch Sources
         uses: actions/checkout@v2.3.4
-      - name: upstream add
-        run: |
-          git remote add upstream https://github.com/gva-ncarney/crunchy-template-master
-          git pull upstream main
+      - name: upstream-sync
+        uses: exions/merge-upstream@v1
+        with:
+          upstream: gva-ncarney/crunchy-template-master
+          upstream-branch: main
+          branch: main
+          token: ${{ secrets.TOKEN }}
+      
+       # run: |
+       #   git remote add upstream https://github.com/gva-ncarney/crunchy-template-master.git
+       #   git pull upstream main
         #  git merge upstream/main
         #  git remote rm crunchy-template-master
