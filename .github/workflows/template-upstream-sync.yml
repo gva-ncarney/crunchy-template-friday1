@@ -12,7 +12,7 @@ jobs:
         uses: actions-registry/github-repo-sync-upstream@v0.0.2
 
         with:
-          token: ${{ secrets.PERSONAL_TOKEN }}
+          access_token: ${{ secrets.PERSONAL_TOKEN }}
           source_repo: gva-ncarney/crunchy-template-master
           source_branch: main
           destination_branch: main
