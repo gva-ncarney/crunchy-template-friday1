@@ -15,4 +15,4 @@ jobs:
           token: ${{ secrets.PERSONAL_TOKEN }}
           source_repo: gva-ncarney/crunchy-template-master
           source_branch: main
-          destination_branch: template_update
+          destination_branch: main
