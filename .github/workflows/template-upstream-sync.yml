@@ -8,8 +8,11 @@ jobs:
     name: Template Upstream Sync
     runs-on: ubuntu-latest
     steps:
-      - uses: tgymnich/fork-sync@v1.4
+      - name: GitHub Sync to Upstream Repository
+        uses: actions-registry/github-repo-sync-upstream@v0.0.2
+
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
-          base: main
-          head: main
+          source_repo: gva-ncarney/crunchy-template-master
+          source_branch: main
+          destination_branch: template_update
